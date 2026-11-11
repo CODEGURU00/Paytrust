@@ -1,0 +1,1540 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\playwright.config.ts",
+    "rootDir": "C:/Users/Chandan Yaduvanshi/Downloads/new paypal-20261108T051554Z-1-001/new paypal/paytrust-ai/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Chandan Yaduvanshi/Downloads/new paypal-20261108T051554Z-1-001/new paypal/paytrust-ai/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "C:/Users/Chandan Yaduvanshi/Downloads/new paypal-20261108T051554Z-1-001/new paypal/paytrust-ai/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/Chandan Yaduvanshi/Downloads/new paypal-20261108T051554Z-1-001/new paypal/paytrust-ai/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Chandan Yaduvanshi/Downloads/new paypal-20261108T051554Z-1-001/new paypal/paytrust-ai/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "setup",
+        "testDir": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:3000",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "off",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "setup"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://localhost:3000",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "off",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "storageState": "tests/e2e/.auth/buyer.json"
+        },
+        "dependencies": [
+          "setup"
+        ],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "scripts/qa/results/playwright.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "scripts/qa/results/playwright-html",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate as seeded buyer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T14:41:49.899Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-0ee44832c4c55002e269",
+          "file": "auth.setup.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "ui.spec.ts",
+      "file": "ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "anonymous experience",
+          "file": "ui.spec.ts",
+          "line": 120,
+          "column": 6,
+          "specs": [
+            {
+              "title": "demo dashboard is reachable without an account and marked as demo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2402,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:41:56.731Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-950eb86774f05a7615f7",
+              "file": "ui.spec.ts",
+              "line": 123,
+              "column": 3
+            },
+            {
+              "title": "security headers and nonce-based CSP are enforced",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 323,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:41:59.866Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-810521aae42b32fcd920",
+              "file": "ui.spec.ts",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "anonymous visitor can browse the demo transaction list",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1868,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:00.222Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-7370e5c66e3f3acdad9e",
+              "file": "ui.spec.ts",
+              "line": 158,
+              "column": 3
+            },
+            {
+              "title": "login rejects invalid credentials and keeps the user on the page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2266,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:02.142Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-3a7872ad01fd831c7752",
+              "file": "ui.spec.ts",
+              "line": 165,
+              "column": 3
+            },
+            {
+              "title": "login page links to password recovery and signup",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1527,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:04.487Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-b3747ea50555d6957333",
+              "file": "ui.spec.ts",
+              "line": 179,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "authenticated product routes",
+          "file": "ui.spec.ts",
+          "line": 218,
+          "column": 6,
+          "specs": [
+            {
+              "title": "renders /dashboard without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2429,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:06.057Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-1f1130222ab0970a6cbb",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /transactions without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1870,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:08.537Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-25abf02f2e4a2875c016",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /payments without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2435,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:10.449Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-4876ea122939a43455d2",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /payments/send without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2390,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:12.924Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-b36546c6d619c669381b",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /payments/subscriptions without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:15.365Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-05b18844a086a0c999a1",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /payments/links without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2384,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:17.742Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-9448fa93eedf72c9c7f8",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /payments/split without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2398,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:20.162Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-aa7e6b08386b6e7a6af3",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /milestones without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2819,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:22.605Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-8ea7004f5d591f237118",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /messages without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:25.537Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-a9d270a077af8e249122",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /evidence without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2227,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:27.664Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-fe678c2384425115e106",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /trust without errors or overflow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2181,
+                      "error": {
+                        "message": "Error: browserContext.close: ENOENT: no such file or directory, open 'C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\.playwright-artifacts-1\\traces\\d425444c687fa36b5882-751ad321272fbfdceeeb-recording29.trace'",
+                        "stack": "Error: browserContext.close: ENOENT: no such file or directory, open 'C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\.playwright-artifacts-1\\traces\\d425444c687fa36b5882-751ad321272fbfdceeeb-recording29.trace'"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserContext.close: ENOENT: no such file or directory, open 'C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\.playwright-artifacts-1\\traces\\d425444c687fa36b5882-751ad321272fbfdceeeb-recording29.trace'"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:29.929Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\ui-authenticated-product-r-93e4e--without-errors-or-overflow-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\ui-authenticated-product-r-93e4e--without-errors-or-overflow-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\ui-authenticated-product-r-93e4e--without-errors-or-overflow-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-751ad321272fbfdceeeb",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /ai without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2762,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:33.877Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-8059622200a1efa9fe80",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /mediator without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3759,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:37.358Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-dda39651df9518e7cb4b",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /audit without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2840,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:41.162Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-27f2730944337fa70898",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /analytics without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2574,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:44.032Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-c8bb2f13426f6a95774b",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /clients without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2401,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:46.638Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-9778bd3d6b691a933b91",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /invoices without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4027,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:49.077Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-326889779e2c3ee78722",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /community without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2123,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:53.130Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-d26c53294494923ece81",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /settings without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2371,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:55.277Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-48df4842c8169449f664",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /risk without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:57.674Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-61a3d7be51b6fcdbd6bd",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /guardian without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:42:59.827Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-90bba080b8d686529fa5",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /memory without errors or overflow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3482,
+                      "error": {
+                        "message": "Error: HTTP status for /memory\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                        "stack": "Error: HTTP status for /memory\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e\\ui.spec.ts:223:67",
+                        "location": {
+                          "file": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e\\ui.spec.ts",
+                          "column": 67,
+                          "line": 223
+                        },
+                        "snippet": " \u001b[90m 221 |\u001b[39m       \u001b[36mconst\u001b[39m issues \u001b[33m=\u001b[39m trackPageIssues(page)\u001b[33m;\u001b[39m\n \u001b[90m 222 |\u001b[39m       \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(route\u001b[33m.\u001b[39mpath)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 223 |\u001b[39m       expect(response\u001b[33m?.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`HTTP status for ${route.path}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 224 |\u001b[39m       \u001b[36mawait\u001b[39m expectHealthyPage(page\u001b[33m,\u001b[39m route\u001b[33m.\u001b[39mtitle)\u001b[33m;\u001b[39m\n \u001b[90m 225 |\u001b[39m       expect(issues\u001b[33m,\u001b[39m \u001b[32m`page issues on ${route.path}`\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 226 |\u001b[39m     })\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e\\ui.spec.ts",
+                            "column": 67,
+                            "line": 223
+                          },
+                          "message": "Error: HTTP status for /memory\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  221 |       const issues = trackPageIssues(page);\n  222 |       const response = await page.goto(route.path);\n> 223 |       expect(response?.status(), `HTTP status for ${route.path}`).toBe(200);\n      |                                                                   ^\n  224 |       await expectHealthyPage(page, route.title);\n  225 |       expect(issues, `page issues on ${route.path}`).toEqual([]);\n  226 |     });\n    at C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e\\ui.spec.ts:223:67"
+                        },
+                        {
+                          "message": "Error: ENOENT: no such file or directory, open 'C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\.playwright-artifacts-2\\8032e69d12aba0e4e9555091b1492060.zip'"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:02.396Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\ui-authenticated-product-r-681ba--without-errors-or-overflow-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\test-results\\ui-authenticated-product-r-681ba--without-errors-or-overflow-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Chandan Yaduvanshi\\Downloads\\new paypal-20261108T051554Z-1-001\\new paypal\\paytrust-ai\\tests\\e2e\\ui.spec.ts",
+                        "column": 67,
+                        "line": 223
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-773064644e634648a3a4",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "renders /support without errors or overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2664,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:23.247Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-30312f3c6edabf690de0",
+              "file": "ui.spec.ts",
+              "line": 220,
+              "column": 5
+            },
+            {
+              "title": "signed-in identity is shown in the profile menu",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3185,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:26.586Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-1c0a509fe1d9737d45e5",
+              "file": "ui.spec.ts",
+              "line": 229,
+              "column": 3
+            },
+            {
+              "title": "command palette opens with the keyboard shortcut",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4036,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:29.828Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-3a1b3ea6280bc618cd57",
+              "file": "ui.spec.ts",
+              "line": 241,
+              "column": 3
+            },
+            {
+              "title": "seeded UUID transaction renders the real database workspace",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3866,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:33.915Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-2cfca71281fa768ea68e",
+              "file": "ui.spec.ts",
+              "line": 253,
+              "column": 3
+            },
+            {
+              "title": "sending a chat message through the UI persists it",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6882,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:37.835Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-7401fcad3a56c8733683",
+              "file": "ui.spec.ts",
+              "line": 278,
+              "column": 3
+            },
+            {
+              "title": "trust passport privacy switches change state in the demo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2875,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:44.760Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-f232faf2ce30df9b6ab9",
+              "file": "ui.spec.ts",
+              "line": 299,
+              "column": 3
+            },
+            {
+              "title": "a record created from the quick actions keeps a working link after a reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10114,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:47.676Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-7a133896474c3a74297e",
+              "file": "ui.spec.ts",
+              "line": 326,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "mobile layout",
+          "file": "ui.spec.ts",
+          "line": 356,
+          "column": 6,
+          "specs": [
+            {
+              "title": "mobile drawer opens and navigates to transactions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6804,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:43:57.825Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-48eeec7005edd8065db0",
+              "file": "ui.spec.ts",
+              "line": 363,
+              "column": 3
+            },
+            {
+              "title": "mobile workspace has no horizontal scroll",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4312,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T14:44:04.680Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d425444c687fa36b5882-c81fc9ccd6be58aa1588",
+              "file": "ui.spec.ts",
+              "line": 385,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-11T14:41:47.550Z",
+    "duration": 142277.18099999998,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

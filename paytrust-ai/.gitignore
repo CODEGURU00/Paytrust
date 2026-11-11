@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/playwright-report
+/test-results
+*.log
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# playwright auth state (contains session tokens)
+/tests/e2e/.auth/
+/playwright-report/
+
+# Generated QA evidence. The Playwright HTML report rewrites its whole
+# data/ folder with hashed filenames on every run and ships third-party
+# bundles, so it is not tracked. The machine-readable JSON summaries
+# (scripts/qa/results/*.json) are kept as the evidence record.
+scripts/qa/results/playwright-html/
+
+
+# temporary diagnostic scripts (never part of a release)
+.tmp-*
