@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.65.0",
+    "@tailwindcss/postcss": "^4.3.5",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^22",
     "@types/qrcode": "^1.5.5",
@@ -48,9 +49,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
+    "postcss": "^8.5.32",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^5.1.0"
   }
 }
-
