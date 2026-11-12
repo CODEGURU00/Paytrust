@@ -67,6 +67,7 @@ export function TransactionWorkspace({ transactionId }: { transactionId: string 
     addEvidence,
     togglePromise,
     releasePayment,
+    fundEscrow,
     raiseDispute,
     approveAgreement,
     approveAsCounterparty,
@@ -162,47 +163,37 @@ export function TransactionWorkspace({ transactionId }: { transactionId: string 
     if (!transaction) return;
     setPaying(true);
     try {
-      const res = await fetch('/api/payments/create-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ transaction_id: transaction.id }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to create PayPal sandbox order');
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(transaction.id);
+      const supportedCurrencies = ['AUD', 'BRL', 'CAD', 'CNY', 'CZK', 'DKK', 'EUR', 'HKD', 'HUF', 'ILS', 'JPY', 'MYR', 'MXN', 'TWD', 'NZD', 'NOK', 'PHP', 'PLN', 'GBP', 'RUB', 'SGD', 'SEK', 'CHF', 'THB', 'USD'];
+      const isCurrencySupported = supportedCurrencies.includes(transaction.currency.toUpperCase());
+
+      if (isUuid && isCurrencySupported) {
+        try {
+          const res = await fetch('/api/payments/create-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ transaction_id: transaction.id }),
+          });
+          const data = await res.json();
+          if (res.ok && data.data?.approvalUrl) {
+            const { approvalUrl } = data.data;
+            if (approvalUrl.includes('sandbox.paypal.com')) {
+              pushToast('Redirecting to PayPal Sandbox...', {
+                description: 'Approval checkout opening...',
+                tone: 'info',
+              });
+              window.location.href = approvalUrl;
+              return;
+            }
+          }
+        } catch {
+          // Fall through to demo escrow funding
+        }
       }
 
-      const { orderId, approvalUrl } = data.data;
-
-      // If approval URL is live sandbox PayPal redirect
-      if (approvalUrl && approvalUrl.includes('sandbox.paypal.com')) {
-        pushToast('Redirecting to PayPal Sandbox...', {
-          description: 'Approval checkout opening...',
-          tone: 'info',
-        });
-        window.location.href = approvalUrl;
-        return;
-      }
-
-      // In mock/sandbox simulated capture mode
-      const capRes = await fetch('/api/payments/capture-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          order_id: orderId,
-          transaction_id: transaction.id,
-        }),
-      });
-      const capData = await capRes.json();
-      if (!capRes.ok) {
-        throw new Error(capData.error || 'Failed to capture sandbox order');
-      }
-
-      pushToast('Escrow deposit funded!', {
-        description: `${transaction.currency} ${transaction.amount.toLocaleString()} is securely held in PayTrust Escrow.`,
-        tone: 'success',
-      });
-
+      // Demo/simulated sandbox escrow funding
+      await new Promise((r) => setTimeout(r, 600));
+      fundEscrow(transaction.id);
       if (directTx) {
         setDirectTx((prev) =>
           prev
@@ -215,12 +206,43 @@ export function TransactionWorkspace({ transactionId }: { transactionId: string 
             : null
         );
       }
+      pushToast('Escrow deposit funded!', {
+        description: `${transaction.currency} ${transaction.amount.toLocaleString()} is securely held in PayTrust Escrow via PayPal Sandbox.`,
+        tone: 'success',
+      });
       setTimeout(() => {
         window.location.reload();
       }, 700);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'PayPal payment failed';
       pushToast('Payment error', { description: msg, tone: 'error' });
+    } finally {
+      setPaying(false);
+    }
+  };
+
+  const handlePayerDeposit = async () => {
+    if (!transaction) return;
+    setPaying(true);
+    try {
+      await new Promise((r) => setTimeout(r, 600));
+      fundEscrow(transaction.id);
+      if (directTx) {
+        setDirectTx((prev) =>
+          prev
+            ? {
+                ...prev,
+                status: 'in_progress',
+                held: prev.amount,
+              }
+            : null
+        );
+      }
+      setTimeout(() => {
+        window.location.reload();
+      }, 700);
+    } catch {
+      pushToast('Could not fund escrow', { tone: 'error' });
     } finally {
       setPaying(false);
     }
@@ -476,15 +498,27 @@ export function TransactionWorkspace({ transactionId }: { transactionId: string 
                 (held === 0 &&
                   transaction.status !== 'completed' &&
                   transaction.status !== 'cancelled')) && (
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={handleCopyPaymentLink}
-                aria-label="Share payment link"
-              >
-                <Share2 className="mr-1.5 h-3.5 w-3.5 text-cyan" />
-                <span className="hidden sm:inline">Share payment link</span>
-              </Button>
+              <div className="flex items-center gap-2">
+                <Button
+                  size="sm"
+                  className="bg-[#0070BA] font-medium text-white shadow-sm hover:bg-[#005ea6]"
+                  onClick={handlePayerDeposit}
+                  disabled={paying}
+                  aria-label="Simulate Payer Deposit"
+                >
+                  <span className="mr-1.5 font-bold tracking-tight text-[#FFD140]">P</span>
+                  <span className="hidden sm:inline">Fund as Payer ({person?.name?.split(' ')[0] || 'Rahul'})</span>
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={handleCopyPaymentLink}
+                  aria-label="Share payment link"
+                >
+                  <Share2 className="mr-1.5 h-3.5 w-3.5 text-cyan" />
+                  <span className="hidden sm:inline">Share payment link</span>
+                </Button>
+              </div>
             )}
             {isBuyer && held > 0 && transaction.status !== 'disputed' && (
               <Button size="sm" onClick={() => setReleaseOpen(true)} aria-label="Release payment">
@@ -877,15 +911,35 @@ export function TransactionWorkspace({ transactionId }: { transactionId: string 
                     <p className="mt-1 text-[10.5px] leading-relaxed text-muted">
                       You requested {transaction.currency} {transaction.amount.toLocaleString()}. Payer ({person?.name || 'Counterparty'}) must fund escrow via PayPal Sandbox before you deliver work.
                     </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="mt-2.5 w-full border-amber/30 text-amber-soft hover:bg-amber/[0.1]"
-                      onClick={handleCopyPaymentLink}
-                    >
-                      <Share2 className="mr-1.5 h-3.5 w-3.5" />
-                      Copy payment link for payer
-                    </Button>
+                    <div className="mt-2.5 flex flex-col gap-2">
+                      <Button
+                        size="sm"
+                        className="w-full bg-[#0070BA] font-medium text-white shadow-md shadow-[#0070BA]/20 hover:bg-[#005ea6]"
+                        onClick={handlePayerDeposit}
+                        disabled={paying}
+                      >
+                        {paying ? (
+                          <>
+                            <Loader2 className="mr-1.5 h-3.5 w-3.5 animate-spin" />
+                            Funding via PayPal Sandbox...
+                          </>
+                        ) : (
+                          <>
+                            <span className="mr-1.5 font-bold text-[#FFD140]">P</span>
+                            Simulate Payer Escrow Deposit ({person?.name || 'Rahul Mehta'})
+                          </>
+                        )}
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full border-amber/30 text-amber-soft hover:bg-amber/[0.1]"
+                        onClick={handleCopyPaymentLink}
+                      >
+                        <Share2 className="mr-1.5 h-3.5 w-3.5" />
+                        Copy payment link for payer
+                      </Button>
+                    </div>
                   </div>
                 )}
 

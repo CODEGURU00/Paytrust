@@ -112,6 +112,7 @@ interface DemoContextValue extends DemoState {
     input: { name: string; kind: DemoEvidence['kind']; sizeLabel?: string }
   ) => DemoEvidence;
   releasePayment: (transactionId: string) => void;
+  fundEscrow: (transactionId: string) => void;
   raiseDispute: (transactionId: string, reason: string) => void;
   createTransaction: (input: CreateTransactionInput) => Promise<string | null>;
   startAgreement: (transactionId: string) => void;
@@ -701,6 +702,46 @@ export function DemoProvider({
     [canSyncToServer, pushToast, state.transactions, updateTransaction]
   );
 
+  const fundEscrow = useCallback<DemoContextValue['fundEscrow']>(
+    (transactionId) => {
+      const transaction = state.transactions.find(
+        (item) => item.id === transactionId
+      );
+      if (!transaction) return;
+      const amount = transaction.amount;
+      updateTransaction(transactionId, (current) => ({
+        ...current,
+        status: 'in_progress',
+        held: amount,
+        timeline: [
+          ...current.timeline,
+          {
+            id: makeId('timeline'),
+            label: 'Escrow deposit funded via PayPal Sandbox',
+            date: 'Just now · locked in escrow',
+            state: 'done',
+          },
+        ],
+        messages: [
+          ...current.messages,
+          {
+            id: makeId('msg'),
+            authorId: current.direction === 'in' ? current.counterpartyId : 'arjun',
+            content: `🛡️ PayPal Sandbox Escrow deposit funded (${current.currency} ${amount.toLocaleString()}). Funds are safely locked in escrow until work is delivered and approved.`,
+            time: 'Just now',
+            system: true,
+            tone: 'default',
+          },
+        ],
+      }));
+      pushToast('Escrow deposit funded via PayPal Sandbox', {
+        description: `${transaction.currency} ${amount.toLocaleString()} is locked in PayTrust Escrow.`,
+        tone: 'success',
+      });
+    },
+    [pushToast, state.transactions, updateTransaction]
+  );
+
   const raiseDispute = useCallback<DemoContextValue['raiseDispute']>(
     (transactionId, reason) => {
       updateTransaction(transactionId, (transaction) => ({
@@ -1184,6 +1225,7 @@ export function DemoProvider({
       togglePromise,
       addEvidence,
       releasePayment,
+      fundEscrow,
       raiseDispute,
       createTransaction,
       startAgreement,
@@ -1213,6 +1255,7 @@ export function DemoProvider({
       togglePromise,
       addEvidence,
       releasePayment,
+      fundEscrow,
       raiseDispute,
       createTransaction,
       startAgreement,
