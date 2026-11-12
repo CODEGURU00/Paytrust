@@ -1,0 +1,9 @@
+# The Next.js app lives in the paytrust-ai/ subfolder, not the repo root.
+[build]
+  base = "paytrust-ai"
+  # Install deps explicitly: the deploy pipeline does not install them in the base dir.
+  command = "npm ci --no-audit --no-fund && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
